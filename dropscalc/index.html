@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="shortcut icon" href="img/tube-icon.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Inicial</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="script" href="/js/scripts.js">
+</head>
+
+<body id="full-page">
+    
+    <h1 id="logo-top">
+        <logo1>CALC DROPS CONTROL</logo1>
+    </h1>
+    
+    <nav>
+        <ul>
+            <li>
+            <a href="index.html">Página Inicial</a> 
+            </li>
+        </ul>
+    
+    </nav>
+
+    <nav>
+        <ul>
+        <li>           
+                      
+            
+            <li class="dropdown">
+            <a>Medicamentos</a>
+
+            <div class="dropdown-menu">
+            
+            <b class="searchheader">Pesquise o medicamento</b>
+            <b><input autocomplete="off" id="searchbar" type="text" name="searchbar" placeholder="Ex: Rivotril" onkeyup="search()"></b>       
+            <b class="searchheader" id="searchMessage"></b>
+            <a class="medicine" href="amplictil-4.html">Amplictil 4%</a>
+            <a class="medicine" href="neozine-4.html">Neozine 4%</a>
+            <a class="medicine" href="neuleptil-1-4.html">Neuleptil 1% e 4%</a>
+            <a class="medicine" href="rivotril-drop.html">Rivotril 2,5mg/ml</a>
+            <a class="medicine" href="clonazepam-drop.html">Clonazepam 2,5mg/ml</a>
+            <a class="medicine" href="clopam-drop.html">Clopam 2,5mg/ml</a>
+            <a class="medicine" href="lexotam-drop.html">Lexotan 2,5mg/ml</a>
+            <a class="medicine" href="somalium-drop.html">Somalium 2,5mg/ml</a>
+            <a class="medicine" href="daforin-drops.html">Daforin Gotas</a>
+            <a class="medicine" href="fluoxetina-drops.html">Fluoxetina Gotas</a>
+            <a class="medicine" href="verotina-drops.html">Verotina Gotas</a>
+            <a class="medicine" href="haldol-drops.html">Haldol 2mg/ml</a>
+            <a class="medicine" href="gardenal-drops.html">Gardenal 40mg/ml</a>
+            <a class="medicine" href="lexapro-drops.html">Lexapro 20mg/ml</a>
+            <a class="medicine" href="exodus-drops.html">Exodus 20mg/ml</a>
+            <a class="medicine" href="esc-drops.html">ESC 20mg/ml</a>
+            <a class="medicine" href="escitalopram-drops.html">Escitalopram 20mg/ml</a>
+            </div>
+                      
+            
+            <li class="dropdown">
+                
+            <a>Links Úteis</a>
+            
+            <div class="dropdown-menu">
+            <a id="btn" target="_blank" href="https://balcao2-front.dpsp.io/">Balcão 2.0</a>
+            <a id="btn" target="_blank" href="https://dpsp-prateleira-infinita.dpsp.io/">Prateleira Infinita</a>
+            <a id="btn" target="_blank" href="https://smartbalcao.dpsp.io/">Farmácia Popular</a>
+            <a id="btn" target="_blank" href="https://www.drogariaspacheco.com.br/">Site Drogarias Pacheco</a>
+            <a id="btn" target="_blank" href="https://www.gov.br/anvisa/pt-br">Site ANVISA</a>
+            <a id="btn" target="_blank" href="https://www.gov.br/anvisa/pt-br/setorregulado/regularizacao/medicamentos/medicamentos-de-referencia/lista-de-medicamentos-de-referencia">Lista A e B Referência</a>
+            <a id="btn" target="_blank" href="https://www.gov.br/anvisa/pt-br/assuntos/medicamentos/similares/lista-de-medicamentos-similares-intercambiaveis.pdf">Medicamentos Intercambiáveis</a>
+            <a id="btn" target="_blank" href="https://consultas.anvisa.gov.br/#/bulario/">Bulário ANVISA</a>
+            <a id="btn" target="_blank" href="https://www.google.com.br/">Pesquisa Google</a>
+            </div>
+            
+        <li><a href="table.html">Utilidades</a></li>
+        <li><a href="presents.html">Sobre</a></li>
+
+    </ul>
+    
+    </nav>
+
+    <script>
+        function search() {
+            // Obtém o valor da barra de pesquisa
+            var input = document.getElementById('searchbar');
+            var filter = input.value.toUpperCase();
+    
+            // Obtém todas as opções do menu
+            var menuItems = document.getElementsByClassName('medicine');
+    
+            // Variável para rastrear se algum item foi encontrado
+            var found = false;
+    
+            // Itera sobre as opções do menu e exibe apenas aquelas que correspondem à pesquisa
+            for (var i = 0; i < menuItems.length; i++) {
+                var menuItem = menuItems[i];
+                var textContent = menuItem.textContent || menuItem.innerText;
+    
+                if (textContent.toUpperCase().indexOf(filter) > -1) {
+                    menuItem.style.display = '';
+                    found = true;
+                } else {
+                    menuItem.style.display = 'none';
+                }
+            }
+    
+            // Exibe a mensagem se nenhum item for encontrado
+            var searchMessage = document.getElementById('searchMessage');
+            if (!found) {
+                searchMessage.textContent = 'MEDICAMENTO NÃO ENCONTRADO: ' + filter;
+            } else {
+                searchMessage.textContent = ''; // Limpa a mensagem se houver resultados
+            }
+        }
+    </script>
+ 
+
+    </br>
+    
+    
+    <h1 id="h1titles"><u>Bem-Vindo</u></h1>
+
+    <p>
+    &nbsp
+    </p>
+
+    <h2 id="text-info-home-page">Verifique a receita com seu farmacêutico responsável de plantão.</h2>
+    <h2>&nbsp</h2>
+    <h2 id="text-info-home-page">Escolha no menu acima qual medicamento deseja calcular para dispensação.</h2>
+    
+    <STYLE type=text/css>BODY {
+        BACKGROUND-IMAGE: url(img/background-all-pages.jpg); BACKGROUND-REPEAT: no-repeat
+        }</STYLE>
+<STYLE TYPE="text/css">
+    BODY {background-image: url(img/background-all-pages.jpg); background-repeat: no-repeat; background-size: 2360px 1168px; background-position: center 0%;}
+    </STYLE>
+    
+    <h4 id="version">Versão 1.1 - 16/02/2024 - © Copyright ®Lucas Ferreira</H4>
+</body>
+</html>

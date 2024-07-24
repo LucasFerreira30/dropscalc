@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="shortcut icon" href="img/tube-icon.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amplictil 4% Gotas</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body id="full-page">
+    <h1 id="logo-top">
+        <logo1>CALC DROPS CONTROL</logo1>
+    </h1>
+
+    <nav>
+        <ul>
+            <li>
+            <a href="index.html">Página Inicial</a> 
+            </li>
+        </ul>
+ 
+                             
+        <li class="dropdown">
+            <a>Medicamentos</a>
+
+            <div class="dropdown-menu">
+                <b class="searchheader">Pesquise o medicamento</b>
+                <b><input autocomplete="off" id="searchbar" type="text" name="searchbar" placeholder="Ex: Rivotril" onkeyup="search()"></b>
+                <b class="searchheader" id="searchMessage"></b>
+                <a class="medicine" href="amplictil-4.html">Amplictil 4%</a>
+                <a class="medicine" href="neozine-4.html">Neozine 4%</a>
+                <a class="medicine" href="neuleptil-1-4.html">Neuleptil 1% e 4%</a>
+                <a class="medicine" href="rivotril-drop.html">Rivotril 2,5mg/ml</a>
+                <a class="medicine" href="clonazepam-drop.html">Clonazepam 2,5mg/ml</a>
+                <a class="medicine" href="clopam-drop.html">Clopam 2,5mg/ml</a>
+                <a class="medicine" href="lexotam-drop.html">Lexotan 2,5mg/ml</a>
+                <a class="medicine" href="somalium-drop.html">Somalium 2,5mg/ml</a>
+                <a class="medicine" href="daforin-drops.html">Daforin Gotas</a>
+                <a class="medicine" href="fluoxetina-drops.html">Fluoxetina Gotas</a>
+                <a class="medicine" href="verotina-drops.html">Verotina Gotas</a>
+                <a class="medicine" href="haldol-drops.html">Haldol 2mg/ml</a>
+                <a class="medicine" href="gardenal-drops.html">Gardenal 40mg/ml</a>
+                <a class="medicine" href="lexapro-drops.html">Lexapro 20mg/ml</a>
+                <a class="medicine" href="exodus-drops.html">Exodus 20mg/ml</a>
+                <a class="medicine" href="esc-drops.html">ESC 20mg/ml</a>
+                <a class="medicine" href="escitalopram-drops.html">Escitalopram 20mg/ml</a>
+            </div>       
+            
+            <li class="dropdown">
+                
+            <a>Links Úteis</a>
+            
+            <div class="dropdown-menu">
+                <a id="btn" target="_blank" href="https://balcao2-front.dpsp.io/">Balcão 2.0</a>
+                <a id="btn" target="_blank" href="https://dpsp-prateleira-infinita.dpsp.io/">Prateleira Infinita</a>
+                <a id="btn" target="_blank" href="https://smartbalcao.dpsp.io/">Farmácia Popular</a>
+                <a id="btn" target="_blank" href="https://www.drogariaspacheco.com.br/">Site Drogarias Pacheco</a>
+                <a id="btn" target="_blank" href="https://www.gov.br/anvisa/pt-br">Site ANVISA</a>
+                <a id="btn" target="_blank" href="https://www.gov.br/anvisa/pt-br/setorregulado/regularizacao/medicamentos/medicamentos-de-referencia/lista-de-medicamentos-de-referencia">Lista A e B Referência</a>
+                <a id="btn" target="_blank" href="https://www.gov.br/anvisa/pt-br/assuntos/medicamentos/similares/lista-de-medicamentos-similares-intercambiaveis.pdf">Medicamentos Intercambiáveis</a>
+                <a id="btn" target="_blank" href="https://consultas.anvisa.gov.br/#/bulario/">Bulário ANVISA</a>
+                <a id="btn" target="_blank" href="https://www.google.com.br/">Pesquisa Google</a>
+                </div>
+
+                   
+            <li class="dropdown">
+            <a href="">Bulas ANVISA</a>
+            <div class="dropdown-menu">
+            <a id="btn" target="_blank" href="bulas/amplictil-bula.pdf">Amplictil 4%</a>
+            </div>
+        </li>
+        </ul>
+            
+        <li><a href="table.html">Utilidades</a></li>
+        <li><a href="presents.html">Sobre</a></li>
+
+    </nav>
+    
+    </br>   
+
+    <h1 id="h1titles"><u>Medicamento</u> <u>Selecionado</u></h1>
+    <h2 id="medicine-selected"><u>Amplictil</u> <u>4%</u> C1 [R]</h2>
+    
+    <br>
+
+    <h1 id="table-caracterists"><u>Características</u><br>Princípio Ativo: Cloridrato de Clorpromazina<br>20ml por frasco = 800 gotas<br>40 gotas por ml</h1>
+    
+    </br>        
+
+    <h2 id="insert-drops">
+        <label for="dropsInput">Insira a quantidade de gotas diária de uso do paciente:</label>
+    </br>
+        <input type="number" value="" id="dropsInput" name="dropsInput" step="1.0" min="0" max="120" required="">
+    </br>
+        <button type="submit" value="enviar" id="button-calc">Calcular</button>
+    </h2>
+    
+    <!-- Área para exibir o resultado da função -->
+    <p id="resultado"></p>
+
+    <!-- Importar o arquivo JavaScript -->
+    <script src="js/scripts.js"></script>
+    
+    <script>
+        // botão ENTER para submit
+        document.addEventListener("keypress", function(e){ 
+
+        if(e.key ==="Enter") {
+
+        const btn = document.querySelector("#button-calc");
+
+        btn.click();
+
+}
+});  
+        // Adicione um evento de clique ao botão usando JavaScript
+        document.getElementById('button-calc').addEventListener('click', function() {
+            // Obtenha o valor das gotas do input
+            var dropsValue = parseFloat(document.getElementById('dropsInput').value);
+      
+            // Verifique se o valor é válido antes de chamar a função
+            if (!isNaN(dropsValue)) {
+                calcAmplictil(dropsValue);
+            } else {
+                alert('O campo para inserção da posologia está em branco. Insira a posologia diária.');
+            }
+        });
+      
+        // Função calcAmplictil com a lógica que você forneceu
+        function calcAmplictil(drops) {
+            var resultadoElement = document.getElementById('resultado');
+            let resultado = '';
+      
+            if (typeof drops === 'undefined') {
+                resultadoElement.textContent = 'Resultado para 30 dias:';
+            } else {
+                const dropsMes = drops * 30;
+                
+                if (drops > 0) {
+                resultado += `Quantidade diária: ${drops.toFixed(1)} gotas por dia<br>`;
+                resultado += `Quantidade em mL diária: ${(drops / 40).toFixed(2)}ml <br>`;
+                resultado += `Quantidade em 30 dias: ${(drops * 30 / 40).toFixed(1)}ml<br>`;
+                resultado += `Quantidade em 60 dias: ${(drops * 60 / 40).toFixed(1)}ml<br>`;
+                    'Verifique lote e validade antes de dispensar.';
+                } 
+                // Tabelas
+                
+                if (drops < 1) {
+                    resultado += '<center>ATENÇÃO!<br>Valor nulo, verifique o valor inserido no sistema.</center>';
+                } else if (drops < 14) {
+                    resultado += 'Para até 60 dias de tratamento dispensar 1 frasco.';
+                } else if (drops < 27) {
+                    resultado += 'Para até 60 dias de tratamento dispensar 2 frascos.'
+                } else if (drops < 41) {
+                    resultado += 'Para até 60 dias de tratamento dispensar 3 frascos.'
+                } else if (drops < 54) {
+                    resultado += 'Para até 60 dias de tratamento dispensar 4 frascos.'
+                } else if (drops < 67) {
+                    resultado += 'Para até 60 dias de tratamento dispensar 5 frascos.'
+                } else if (drops < 81) {
+                    resultado += 'Para até 60 dias de tratamento dispensar 6 frascos.'
+                } else if (drops < 94) {
+                    resultado += 'Para até 60 dias de tratamento dispensar 7 frascos.'
+                } else if (drops < 107) {
+                    resultado += 'Para até 60 dias de tratamento dispensar 8 frascos.'
+                } else if (drops < 121) {
+                    resultado += 'Para até 60 dias de tratamento dispensar 9 frascos.'
+                } else if (drops < 200) {
+                    resultado += 'Excede a posologia máxima, verifique com o farmacêutico'
+                }
+            }
+      
+            resultadoElement.innerHTML = resultado;
+            
+        }
+
+        
+      </script>
+    
+    <STYLE type=text/css>BODY {
+    BACKGROUND-IMAGE: url(img/frascos-lab.png); BACKGROUND-REPEAT: no-repeat
+    }</STYLE>
+    <STYLE TYPE="text/css">
+    BODY {background-image: url(img/frascos-lab.png); background-repeat: no-repeat; background-size: 850px; background-position: center 92px;}
+    </STYLE>
+
+        
+    
+</body>
+</html>
